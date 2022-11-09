@@ -71,7 +71,6 @@ function LineChart({
             setTimeout(() => {
               // eslint-disable-next-line react/no-this-in-sfc
               this.series.forEach((series) => {
-                console.log(series.points[series.points.length - 1]);
                 series.points[series.points.length - 1].update({
                   dataLabels: {
                     enabled: true,

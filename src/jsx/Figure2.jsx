@@ -17,8 +17,6 @@ function Figure1() {
 
     const max_value = Math.max(...values);
 
-    console.log(max_value);
-
     return ({
       data: values.map((e, i) => ({
         name: labels[i],
