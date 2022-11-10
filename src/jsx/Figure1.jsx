@@ -19,7 +19,7 @@ function Figure1() {
         x: labels[j],
         y: e,
         dataLabels: {
-          y: (i === 0 && j === 0) ? -10 : (i === 1 && j === 0) ? 30 : (i === 0) ? 40 : -0
+          y: (i === 0 && j === 0) ? 30 : (i === 1 && j === 0) ? -10 : (i === 0) ? 40 : -0
         }
       })),
       name: el.Name,

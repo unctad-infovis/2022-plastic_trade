@@ -2,8 +2,15 @@ import React from 'react';
 
 import { createRoot } from 'react-dom/client';
 
+import Counter from './jsx/Counter.jsx';
 import Figure1 from './jsx/Figure1.jsx';
 import Figure2 from './jsx/Figure2.jsx';
+
+const containerCounter = document.getElementById('app-root-2022-plastic_trade_counter');
+if (containerCounter) {
+  const rootCounter = createRoot(containerCounter);
+  rootCounter.render(<Counter />);
+}
 
 const containerFigure1 = document.getElementById('app-root-2022-plastic_trade_figure1');
 if (containerFigure1) {
