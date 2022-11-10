@@ -211,7 +211,7 @@ function LineChart({
         useHTML: true,
         formatter() {
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">Year 2021</h3><div><span class="tooltip_label">${this.point.name}</span> <span class="tooltip_value">${parseInt(this.point.value, 10).toLocaleString('en-US')}</span></div></div>`;
+          return `<div class="tooltip_container"><div><span class="tooltip_label">${this.point.name}</span><br /><span class="tooltip_value">${parseInt(this.point.value, 10).toLocaleString('en-US')} billion US dollars</span></div></div>`;
         },
       },
       xAxis: {

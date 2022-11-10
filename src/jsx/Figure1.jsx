@@ -20,13 +20,11 @@ function Figure1() {
         x: labels[j],
         y: e,
         dataLabels: {
-          y: (i === 0 && j === 0) ? -10 : (i === 1 && j === 0) ? 30 : (i === 0) ? -10 : 40
+          y: (i === 0 && j === 0) ? -10 : (i === 1 && j === 0) ? 30 : (i === 0) ? 40 : 0
         }
       })),
       name: el.Name,
-      dataLabels: {
-      },
-      yAxis: i,
+      yAxis: i
     });
   });
 
