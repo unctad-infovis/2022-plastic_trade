@@ -11,15 +11,16 @@ function Figure1() {
   const [dataFigure, setDataFigure] = useState(false);
 
   const cleanData = (data) => data.map((el, i) => {
+    const divider = (i === 0) ? 1000000 : 1000;
     const labels = Object.keys(el).filter(val => val !== 'Name').map(val => Date.UTC(parseInt(val, 10), 0, 1));
-    const values = Object.values(el).map(val => (parseFloat(val) * 1000)).filter(val => !Number.isNaN(val));
+    const values = Object.values(el).map(val => (parseFloat(val) / divider)).filter(val => !Number.isNaN(val));
 
     return ({
       data: values.map((e, j) => ({
         x: labels[j],
         y: e,
         dataLabels: {
-          y: (i === 0 && j === 0) ? 30 : (i === 1 && j === 0) ? -10 : (i === 0) ? 40 : -0
+          y: (i === 0 && j === 0) ? -10 : (i === 1 && j === 0) ? 30 : (i === 0) ? -10 : 40
         }
       })),
       name: el.Name,
@@ -51,11 +52,11 @@ function Figure1() {
       <ChartLine
         idx="1"
         data={dataFigure}
-        note="NOTES"
-        source="SOURCE"
-        subtitle="SUBTITLE"
+        note="Total plastics trade has been aggregated across five stages of the life-cycle of plastics: primary forms of plastics, intermediate forms of plastics, intermediate manufactured plastic products, final manufactured plastic products, and plastic waste. The hierarchy table used for the aggregation of Harmonized-System six-digit is available on the UNCTADstat Classifications website."
+        source="UNCTAD calculation based on UN Comtrade database."
+        subtitle="Value and volume of global plastics good exports between 2005 and 2021"
         suffix=""
-        title="TITLE 1"
+        title="Global plastic goods exports growing in value and volume"
         ylabel=""
       />
       )}

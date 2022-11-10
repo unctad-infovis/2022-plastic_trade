@@ -11,7 +11,7 @@ import highchartsExportData from 'highcharts/modules/export-data';
 import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
-import abbreviateNumber from '../helpers/AbbreviateNumber.js';
+// import abbreviateNumber from '../helpers/AbbreviateNumber.js';
 
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
@@ -89,7 +89,6 @@ function LineChart({
         },
         height: chartHeight,
         marginRight: 80,
-        type: 'line',
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -117,6 +116,7 @@ function LineChart({
           fontFamily: 'Roboto',
           fontWeight: 400
         },
+        type: 'line',
         zoomType: 'x'
       },
       colors: ['#009edb', '#72bf44'],
@@ -159,7 +159,7 @@ function LineChart({
             enabled: false,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<span style="color: ${this.color}">${abbreviateNumber(this.y)}</div>`;
+              return `<span style="color: ${this.color}">${parseInt(this.y, 10).toLocaleString('en-US')}</div>`;
             },
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
@@ -230,7 +230,7 @@ function LineChart({
       },
       title: {
         align: 'left',
-        margin: 80,
+        margin: 20,
         widthAdjust: -160,
         style: {
           color: '#000',
@@ -251,7 +251,7 @@ function LineChart({
           // eslint-disable-next-line react/no-this-in-sfc
           const values = this.points.filter(point => point.series.name !== '').map(point => [point.series.name.split(' (')[0], point.y, point.color]);
           const rows = [];
-          rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${abbreviateNumber(point[1])}${suffix}</span></div>`).join(''));
+          rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${parseInt(point[1], 10).toLocaleString('en-US')}${suffix}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
           return `<div class="tooltip_container"><h3 class="tooltip_header">Year ${(new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
         },

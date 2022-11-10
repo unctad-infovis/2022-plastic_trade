@@ -12,8 +12,6 @@ import highchartsMore from 'highcharts/highcharts-more';
 import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
-import abbreviateNumber from '../helpers/AbbreviateNumber.js';
-
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
 highchartsExportData(Highcharts);
@@ -95,7 +93,7 @@ function LineChart({
             }
           }
         },
-        margin: 100,
+        marginTop: 120,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontFamily: 'Roboto',
@@ -141,7 +139,7 @@ function LineChart({
           draggable: false,
           layoutAlgorithm: {
             splitSeries: false,
-            gravitationalConstant: 0.02
+            gravitationalConstant: 0.01
           },
           marker: {
             fillOpacity: 1,
@@ -213,7 +211,7 @@ function LineChart({
         useHTML: true,
         formatter() {
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">Year 2021</h3><div><span class="tooltip_label">${this.point.name}</span> <span class="tooltip_value">${abbreviateNumber(this.point.value)}</span></div></div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">Year 2021</h3><div><span class="tooltip_label">${this.point.name}</span> <span class="tooltip_value">${parseInt(this.point.value, 10).toLocaleString('en-US')}</span></div></div>`;
         },
       },
       xAxis: {
