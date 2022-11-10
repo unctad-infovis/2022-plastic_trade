@@ -12,6 +12,8 @@ import highchartsMore from 'highcharts/highcharts-more';
 import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
+import roundNr from '../helpers/RoundNr.js';
+
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
 highchartsExportData(Highcharts);
@@ -48,7 +50,7 @@ function LineChart({
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
 
-  const chartHeight = 600;
+  const chartHeight = 650;
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       caption: {
@@ -93,7 +95,7 @@ function LineChart({
             }
           }
         },
-        marginTop: 120,
+        marginTop: 160,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontFamily: 'Roboto',
@@ -177,7 +179,7 @@ function LineChart({
       subtitle: {
         align: 'left',
         enabled: true,
-        widthAdjust: -144,
+        widthAdjust: -160,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontSize: '16px',
@@ -190,7 +192,7 @@ function LineChart({
       title: {
         align: 'left',
         margin: 80,
-        widthAdjust: -160,
+        widthAdjust: -190,
         style: {
           color: '#000',
           fontSize: '30px',
@@ -211,7 +213,7 @@ function LineChart({
         useHTML: true,
         formatter() {
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><div><span class="tooltip_label">${this.point.name}</span><br /><span class="tooltip_value">${parseInt(this.point.value, 10).toLocaleString('en-US')} billion US dollars</span></div></div>`;
+          return `<div class="tooltip_container"><div><span class="tooltip_label">${this.point.name}</span><br /><span class="tooltip_value">${roundNr(this.point.value, 0).toLocaleString('en-US')} billion US dollars</span></div></div>`;
         },
       },
       xAxis: {

@@ -11,7 +11,7 @@ import highchartsExportData from 'highcharts/modules/export-data';
 import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
-// import abbreviateNumber from '../helpers/AbbreviateNumber.js';
+import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
@@ -159,7 +159,7 @@ function LineChart({
             enabled: false,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<span style="color: ${this.color}">${parseInt(this.y, 10).toLocaleString('en-US')}</div>`;
+              return `<span style="color: ${this.color}">${roundNr(this.y, 0).toLocaleString('en-US')}</div>`;
             },
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
@@ -218,28 +218,28 @@ function LineChart({
       subtitle: {
         align: 'left',
         enabled: true,
-        widthAdjust: -144,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontSize: '16px',
           fontWeight: 400,
           lineHeight: '18px'
         },
-        x: 100,
-        text: subtitle
+        text: subtitle,
+        widthAdjust: -160,
+        x: 100
       },
       title: {
         align: 'left',
-        margin: 20,
-        widthAdjust: -160,
+        margin: 40,
         style: {
           color: '#000',
           fontSize: '30px',
           fontWeight: 700,
           lineHeight: '34px'
         },
-        x: 100,
-        text: title
+        text: title,
+        widthAdjust: -160,
+        x: 100
       },
       tooltip: {
         backgroundColor: '#fff',
@@ -251,7 +251,7 @@ function LineChart({
           // eslint-disable-next-line react/no-this-in-sfc
           const values = this.points.filter(point => point.series.name !== '').map(point => [point.series.name.split(' (')[0], point.y, point.color]);
           const rows = [];
-          rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${parseInt(point[1], 10).toLocaleString('en-US')}${suffix}</span></div>`).join(''));
+          rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${roundNr(point[1], 0).toLocaleString('en-US')}${suffix}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
           return `<div class="tooltip_container"><h3 class="tooltip_header">Year ${(new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
         },

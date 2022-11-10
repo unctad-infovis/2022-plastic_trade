@@ -56,10 +56,10 @@ function Figure1() {
         idx="2"
         data={dataFigure}
         note="Total plastics trade has been aggregated across five stages of the life-cycle of plastics: primary forms of plastics, intermediate forms of plastics, intermediate manufactured plastic products, final manufactured plastic products, and plastic waste. The hierarchy table used for the aggregation of Harmonized-System six-digit is available on the UNCTADstat Classifications website."
-        source="UNCTAD calculation based on UN Comtrade database."
+        source="UNCTADstat based on calculations using UN Comtrade, https://unctadstat.unctad.org/wds/"
         subtitle="Country good exports compared to global plastics goods exports in 2021, billions of US dollars"
         suffix=""
-        title="Global plastics goods exports would be the 4th largest good exporter"
+        title="Global plastic goods exports put together would make the 4th largest goods exporter country"
         ylabel=""
       />
       )}

@@ -20,7 +20,7 @@ function Counter() {
       <div className="counter_container">
         <h4>It would require</h4>
         <div ref={chartRef}>
-          {(isVisible) && (<div className="counter"><CountUp easingFn={easingFn} end={18400000000} duration={5} separator="," useEasing /></div>)}
+          {(isVisible) && (<div className="counter"><CountUp easingFn={easingFn} end={18400000} duration={5} separator="," useEasing /></div>)}
         </div>
         <h4>trucks to carry all the plastic products exported in the world in a year</h4>
       </div>
