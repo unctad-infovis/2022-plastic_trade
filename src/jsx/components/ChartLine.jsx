@@ -48,7 +48,7 @@ function LineChart({
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
 
-  const chartHeight = 650;
+  const chartHeight = 700;
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       caption: {
@@ -136,7 +136,7 @@ function LineChart({
       legend: {
         align: 'right',
         enabled: (data.length > 1),
-        itemDistance: 30,
+        itemDistance: 20,
         itemStyle: {
           color: '#000',
           cursor: 'default',
@@ -371,7 +371,7 @@ function LineChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container">
+    <div className="chart_container" style={{ marginBottom: '-20px' }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>

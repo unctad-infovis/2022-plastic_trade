@@ -95,7 +95,8 @@ function LineChart({
             }
           }
         },
-        marginTop: 160,
+        marginLeft: 0,
+        marginRight: 0,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontFamily: 'Roboto',
@@ -123,6 +124,7 @@ function LineChart({
       },
       plotOptions: {
         packedbubble: {
+          cursor: 'pointer',
           dataLabels: {
             enabled: true,
             format: '{point.name}',
