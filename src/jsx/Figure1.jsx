@@ -54,7 +54,7 @@ function Figure1() {
         source="UNCTADstat based on calculations using UN Comtrade, https://unctadstat.unctad.org/wds/"
         subtitle="Value and volume of global plastic good exports between 2005 and 2021"
         suffix=""
-        title="Global plastic goods exports growing in value and volume"
+        title="The soaring global plastics trade"
         ylabel=""
       />
       )}

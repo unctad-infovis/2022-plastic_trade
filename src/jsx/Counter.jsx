@@ -29,7 +29,7 @@ function Counter() {
         <div className="counter_wrapper" ref={chartRef}>
           {(isVisible) && (<div className="counter"><CountUp easingFn={easingFn} end={18400000} duration={5} separator="," useEasing /></div>)}
         </div>
-        <h4>trucks to carry all the plastic products exported in the world in a year</h4>
+        <h4>trucks to carry all the plastic products exported in the world in a year.</h4>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
