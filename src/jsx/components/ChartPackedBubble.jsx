@@ -168,6 +168,20 @@ function LineChart({
       responsive: {
         rules: [{
           chartOptions: {
+            title: {
+              margin: 20
+            },
+            plotOptions: {
+              packedbubble: {
+                maxSize: '200%'
+              }
+            }
+          },
+          condition: {
+            maxWidth: 630
+          }
+        }, {
+          chartOptions: {
             chart: {
               height: 700
             },
@@ -221,7 +235,7 @@ function LineChart({
       },
       title: {
         align: 'left',
-        margin: 80,
+        margin: 40,
         widthAdjust: -160,
         style: {
           color: '#000',

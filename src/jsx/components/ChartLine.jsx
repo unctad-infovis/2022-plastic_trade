@@ -315,7 +315,7 @@ function LineChart({
         lineColor: '#ccc',
         lineWidth: 0,
         opposite: false,
-        tickInterval: 1000 * 60 * 60 * 24 * 365,
+        // tickInterval: 1000 * 60 * 60 * 24 * 365,
         tickLength: 5,
         tickWidth: 1,
         type: 'datetime',
