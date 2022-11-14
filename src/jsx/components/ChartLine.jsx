@@ -204,6 +204,15 @@ function LineChart({
       responsive: {
         rules: [{
           chartOptions: {
+            title: {
+              margin: 10
+            }
+          },
+          condition: {
+            maxWidth: 630
+          }
+        }, {
+          chartOptions: {
             chart: {
               height: 700
             },
@@ -211,6 +220,7 @@ function LineChart({
               layout: 'horizontal'
             },
             title: {
+              margin: 10,
               style: {
                 fontSize: '26px',
                 lineHeight: '30px'
@@ -256,7 +266,7 @@ function LineChart({
       },
       title: {
         align: 'left',
-        margin: 10,
+        margin: 40,
         style: {
           color: '#000',
           fontSize: '30px',
