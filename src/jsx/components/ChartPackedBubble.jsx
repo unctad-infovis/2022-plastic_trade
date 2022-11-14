@@ -168,12 +168,40 @@ function LineChart({
       responsive: {
         rules: [{
           chartOptions: {
+            chart: {
+              height: 700
+            },
             legend: {
               layout: 'horizontal'
-            }
+            },
+            title: {
+              style: {
+                fontSize: '26px',
+                lineHeight: '30px'
+              },
+              text: 'If the global plastics trade were a country'
+            },
+            yAxis: [{
+              title: {
+                text: null
+              }
+            }, {
+              title: {
+                text: null
+              }
+            }]
           },
           condition: {
             maxWidth: 500
+          }
+        }, {
+          chartOptions: {
+            chart: {
+              height: 800
+            }
+          },
+          condition: {
+            maxWidth: 400
           }
         }]
       },
@@ -181,7 +209,7 @@ function LineChart({
       subtitle: {
         align: 'left',
         enabled: true,
-        widthAdjust: -160,
+        widthAdjust: -100,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontSize: '16px',
@@ -194,7 +222,7 @@ function LineChart({
       title: {
         align: 'left',
         margin: 80,
-        widthAdjust: -190,
+        widthAdjust: -160,
         style: {
           color: '#000',
           fontSize: '30px',

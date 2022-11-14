@@ -145,7 +145,6 @@ function LineChart({
           fontWeight: 400
         },
         layout: 'horizontal',
-        margin: 20,
         verticalAlign: 'top'
       },
       plotOptions: {
@@ -155,7 +154,7 @@ function LineChart({
           },
           cursor: 'pointer',
           dataLabels: {
-            allowOverlap: true,
+            allowOverlap: false,
             enabled: false,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
@@ -205,12 +204,39 @@ function LineChart({
       responsive: {
         rules: [{
           chartOptions: {
+            chart: {
+              height: 700
+            },
             legend: {
               layout: 'horizontal'
-            }
+            },
+            title: {
+              style: {
+                fontSize: '26px',
+                lineHeight: '30px'
+              }
+            },
+            yAxis: [{
+              title: {
+                text: null
+              }
+            }, {
+              title: {
+                text: null
+              }
+            }]
           },
           condition: {
             maxWidth: 500
+          }
+        }, {
+          chartOptions: {
+            chart: {
+              height: 800
+            }
+          },
+          condition: {
+            maxWidth: 400
           }
         }]
       },
@@ -225,12 +251,12 @@ function LineChart({
           lineHeight: '18px'
         },
         text: subtitle,
-        widthAdjust: -160,
+        widthAdjust: -100,
         x: 100
       },
       title: {
         align: 'left',
-        margin: 40,
+        margin: 10,
         style: {
           color: '#000',
           fontSize: '30px',
