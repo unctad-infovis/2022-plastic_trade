@@ -2,6 +2,14 @@
 
 **Live demo** https://unctad-infovis.github.io/2022-plastic_trade/
 
+## Used in
+
+* [Global plastics trade hits record $1.2 trillion](https://unctad.org/data-visualization/global-plastics-trade-reached-nearly-1.2-trillion-2021)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1591104203237117957)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1591103274719088641)
+* [UNCTAD/Twitter](https://www.instagram.com/p/Ck07wDssU8s/)
+* [UNCTAD/Twitter](https://www.instagram.com/p/CkyQFDQMi_C/)
+
 ## Rights of usage
 
 Contact Teemo Tebest.
