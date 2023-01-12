@@ -44,7 +44,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
   return path;
 };
 
-function LineChart({
+function PackedBubbleChart({
   allow_decimals, data, idx, note, show_first_label, source, subtitle, title
 }) {
   const chartRef = useRef();
@@ -381,7 +381,7 @@ function LineChart({
   );
 }
 
-LineChart.propTypes = {
+PackedBubbleChart.propTypes = {
   allow_decimals: PropTypes.bool,
   data: PropTypes.instanceOf(Array).isRequired,
   idx: PropTypes.string.isRequired,
@@ -392,11 +392,11 @@ LineChart.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-LineChart.defaultProps = {
+PackedBubbleChart.defaultProps = {
   allow_decimals: true,
   note: false,
   show_first_label: true,
   subtitle: false,
 };
 
-export default LineChart;
+export default PackedBubbleChart;
