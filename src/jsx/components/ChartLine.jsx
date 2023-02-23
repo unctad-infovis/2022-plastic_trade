@@ -47,7 +47,6 @@ function LineChart({
 }) {
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
-
   const chartHeight = 700;
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
@@ -426,7 +425,7 @@ LineChart.propTypes = {
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   suffix: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 LineChart.defaultProps = {
@@ -435,7 +434,7 @@ LineChart.defaultProps = {
   note: false,
   show_first_label: true,
   subtitle: false,
-  suffix: '',
+  suffix: ''
 };
 
 export default LineChart;
